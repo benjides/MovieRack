@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <ImageView
+        android:src="@drawable/placeholder"
+        android:id="@+id/itemPoster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/gradient"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Star War VII - The Force Awakens"
+            android:textSize="14sp"
+            android:textColor="#FFF"
+            android:id="@+id/itemTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="2015"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:id="@+id/itemYear" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
