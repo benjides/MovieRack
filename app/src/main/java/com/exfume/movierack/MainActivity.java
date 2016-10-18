@@ -9,8 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.exfume.movierack.adapter.MovieAdapter;
-import com.exfume.movierack.api.TraktRest;
-
+import com.exfume.movierack.api.tmdbRest;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mErrorDisplay;
     private ProgressBar mProgressBar;
     private MovieAdapter adapter;
-    private TraktRest RestService;
+    private tmdbRest RestService;
 
 
     @Override
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RestService = new TraktRest();
+        RestService = new tmdbRest();
 
         GridLayoutManager LayoutManager = new GridLayoutManager(this,2);
         if(getResources().getConfiguration().orientation == 2){
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(LayoutManager);
 
         adapter = new MovieAdapter(this);
-        RestService.trendingMovies(1,20,adapter);
+        RestService.popularMovies(adapter);
         mRecyclerView.setAdapter(adapter);
 
     }

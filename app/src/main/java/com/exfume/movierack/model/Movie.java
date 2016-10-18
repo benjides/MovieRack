@@ -1,22 +1,30 @@
 package com.exfume.movierack.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
-/**
- * Created by Benjides on 22/12/2015.
- */
+
+import java.util.Calendar;
+import java.util.Date;
+
+
 public class Movie  {
 
     public String title;
-    public int year;
-    public Images images;
-    public Id ids;
+    private Date release_date;
+    private String poster_path;
 
-    public float rating;
-    public int runtime;
-    public String overview;
-    public String released;
-    public String trailer;
+
+    public int getYear()
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(this.release_date);
+        return cal.get(Calendar.YEAR);
+    }
+
+    public String getPoster()
+    {
+        return "https://image.tmdb.org/t/p/w780/"+this.poster_path;
+    }
+
+
 
 }
