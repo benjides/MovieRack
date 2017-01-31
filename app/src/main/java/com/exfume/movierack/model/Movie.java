@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Movie  {
 
+    public int id;
     public String title;
     private Date release_date;
     private String poster_path;

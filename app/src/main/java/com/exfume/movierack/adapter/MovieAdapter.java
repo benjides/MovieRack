@@ -1,5 +1,7 @@
 package com.exfume.movierack.adapter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,6 +46,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
         final Movie movie = dataset.get(position);
         holder.itemTitle.setText(movie.title);
         holder.itemYear.setText(""+movie.getYear());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW , Uri.parse("https://www.themoviedb.org/movie/"+dataset.get(position).id+"?language=en-US"));
+                activity.startActivity(intent);
+            }
+        });
 
         Glide.with(holder.itemPoster.getContext())
                 .load(movie.getPoster())
